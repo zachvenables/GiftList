@@ -90,3 +90,11 @@
     flex-direction: column;
   }
 }
+
+.list {
+  font-size: 1.5rem;
+}
+
+.listitem {
+  margin: 1rem;
+}
