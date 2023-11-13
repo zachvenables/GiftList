@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Zack's Birthday Stuff</title>
+        <title>Zack's Christmas Stuff</title>
         <link rel="icon" href="/christmas-tree.png" />
       </Head>
 
@@ -32,18 +32,18 @@ export default function Home() {
         </h2>
 
         <ul className={styles.list}>
-        {/* {listItem("Flaming Bandana: ", "https://www.amazon.com/DANLCUPL-Cycling-Bandana-Motorcycle-Cooling/dp/B095MR28LG/ref=sr_1_9?keywords=flame+bandana&qid=1696172170&sr=8-9")}
-          {listItem("Bike Headlight: ", "https://www.amazon.com/gp/product/B07H26DJSR/?smid=A26A9QLFNQPSCL&tag=thewire06-20")}
-          {listItem("Cycling Shoes, size 12.5, Black/Silver/Gum: ", "https://www.competitivecyclist.com/crank-brothers-stamp-lace-cycling-shoe-mens?CMP_SKU=CRNH013&MER=0406&utm_source=Avantlink&utm_medium=Affiliate&CSPID=0920&avad=246073_a3399b005&SharedId=246073_a3399b005&utm_medium=Affiliate&utm_source=www.toptenreviews.com&utm_campaign=datafeed&utm_term=Content")}
-          {listItem("Bike seat cover: ", "https://www.amazon.com/dp/B01H71AZ36?linkCode=ogi&tag=bicycling-auto-20&ascsubtag=%5Bartid%7C2143.g.40709971%5Bsrc%7Cwww.google.com%5Bch%7C%5Blt%7Cpsv%5Bpid%7Caab76536-c19f-4b49-aa5b-cde3c55f2786")}
-          {listItem("Cycling Jacket, size M:  ", "https://www.decathlon.com/collections/bike-jackets/products/van-rysel-cold-weather-lightweight-road-cycling-jacket?avad=55097_c3399427d&variant=32498323030078")}
-          {listItem("Headband, size S, black: ", "https://www.amazon.com/dp/B09991Z9JC?linkCode=ogi&tag=bicycling-auto-20&ascsubtag=%5Bartid%7C2143.g.20011461%5Bsrc%7Cwww.google.com%5Bch%7C%5Blt%7Csale%5Bpid%7Cd8081d73-7e58-40e0-b900-d6c705d7c40f&th=1&psc=1")}
-          {listItem("Zagnut 6-pack: ", "https://www.amazon.com/Zagnut-Coconut-Multiple-CANDY-CABIN/dp/B08X31N4X4/ref=sr_1_6?keywords=Zagnut&qid=1696170891&sr=8-6")}
-          {listItem("Beard Trimmer: ", "https://www.amazon.com/Hatteker-Grooming-Mustache-Cordless-Waterproof/dp/B07QTZCQ8Y?asc_source=&asc_campaign=5994b2d7d48ec673e16de420%7C86uV7tXbp9ss6poVb4j5WW&asc_refurl=https%3A%2F%2Fwww.gq.com%2Fstory%2Fbest-stuff-beard-trimmers&tag=gqgensqua-20&ascsubtag=5994b2d7d48ec673e16de420")}
-          {listItem("Ankle Socks, size 6-12: ", "https://www.amazon.com/Dickies-Dri-Tech-Moisture-Control-6-Pack/dp/B0792FKBQZ/ref=sr_1_3?crid=1EBPQB2C4ESBA&keywords=dickies%2Bdri%2Btech%2Bankle%2Bsocks&qid=1696171391&sprefix=dickies%2Bdri%2Btech%2Bankle%2Bsokcs%2Caps%2C92&sr=8-3&th=1&psc=1")} */}
+          {listItem("Adjustable Kettle Bell: ", "https://www.bowflex.com/selecttech/840-kettlebell/100790.html?irgwc=1&adID=DFBAFFIMPACT&clickid=QakzDfUz9xyPRnTyotQz3z4CUkFVE4w5WU3a1A0&utm_source=impact&utm_medium=affiliate&utm_campaign=NessWell&utm_term=3285732&utm_content=")}
+          {listItem("Raspberry Pi 5 8GB (Board Only): ", "https://www.canakit.com/raspberry-pi-5-8gb.html?cid=USD")}
+          {listItem("Raspberry Pi 5 Case: ", "https://www.canakit.com/official-raspberry-pi-5-case.html")}
+          {listItem("Raspberry Pi 5 Power Supply: ", "https://www.canakit.com/official-raspberry-pi-5-power-supply-27w-usb-c-white.html")}
+          {listItem("Micro SD Card: ", "https://www.amazon.com/gp/product/B09WB1857W/ref=ox_sc_act_title_3?smid=ATVPDKIKX0DER&psc=1")}
+          {listItem("Micro SD Card Reader: ", "https://www.amazon.com/Beikell-Connector-Adapter-Supports-Compatible-Windows/dp/B0BNJ9RGVP/ref=sr_1_3?crid=2V9TCVH9M6VYB&keywords=sd%2Bcard%2Breader&qid=1699754335&s=electronics&sprefix=sd%2Bcard%2Breader%2Celectronics%2C91&sr=1-3&th=1")}
+          {listItem("Wireless Controller: ", "https://www.amazon.com/Ultimate-Wireless-Controller-Raspberry-Gaming-Console/dp/B0B9BTXHSM?tag=mar23a-20&linkId=1200842a70b65317bc7a7612910e2305&ref_=as_li_ss_tl&geniuslink=true&th=1")}
+          {listItem("Weed Gummies: ", "https://www.iheartjane.com/embed/stores/2410/products/1207962/camino-uplifting-watermelon-spritz-20pk-200mg-thc?recommended=false&fromMenu=true")}
+          {listItem("More Weed Gummies: ", "https://www.iheartjane.com/embed/stores/2410/products/221079/camino-5-1-sleep-midnight-blueberry-20pk-100mg-thc-20mg-cbn?recommended=false&fromMenu=true")}
+
         </ul>
 
-        
       </main>
 
       <footer>
