@@ -40,7 +40,6 @@ export default function Home() {
           {listItem("Micro SD Card Reader: ", "https://www.amazon.com/Beikell-Connector-Adapter-Supports-Compatible-Windows/dp/B0BNJ9RGVP/ref=sr_1_3?crid=2V9TCVH9M6VYB&keywords=sd%2Bcard%2Breader&qid=1699754335&s=electronics&sprefix=sd%2Bcard%2Breader%2Celectronics%2C91&sr=1-3&th=1")}
           {listItem("Wireless Controller: ", "https://www.amazon.com/Ultimate-Wireless-Controller-Raspberry-Gaming-Console/dp/B0B9BTXHSM?tag=mar23a-20&linkId=1200842a70b65317bc7a7612910e2305&ref_=as_li_ss_tl&geniuslink=true&th=1")}
           {listItem("Weed Gummies: ", "https://www.iheartjane.com/embed/stores/2410/products/1207962/camino-uplifting-watermelon-spritz-20pk-200mg-thc?recommended=false&fromMenu=true")}
-          {listItem("More Weed Gummies: ", "https://www.iheartjane.com/embed/stores/2410/products/221079/camino-5-1-sleep-midnight-blueberry-20pk-100mg-thc-20mg-cbn?recommended=false&fromMenu=true")}
 
         </ul>
 
