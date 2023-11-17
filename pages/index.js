@@ -41,7 +41,7 @@ export default function Home() {
           {listItem("Wireless Controller: ", "https://www.amazon.com/Ultimate-Wireless-Controller-Raspberry-Gaming-Console/dp/B0B9BTXHSM?tag=mar23a-20&linkId=1200842a70b65317bc7a7612910e2305&ref_=as_li_ss_tl&geniuslink=true&th=1")}
           {listItem("Slippers", "")}
           {listItem("Weight Tree", "https://www.amazon.com/CAP-Barbell-Frame-Olympic-Plate/dp/B00ZEYG9WK/ref=sr_1_7?keywords=weight+tree&qid=1700229365&sr=8-7")}
-
+          {listItem("Stretching strap", "https://www.amazon.com/Gradient-Fitness-Stretching-Multi-loop-Neoprene/dp/B01A4CG3PE/ref=sr_1_54?qid=1700264325&s=exercise-and-fitness&sr=1-54&th=1")}
         </ul>
 
       </main>
