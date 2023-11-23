@@ -41,8 +41,8 @@ export default function Home() {
           {listItem("Slippers", "")}
           {listItem("Weight Tree", "https://www.amazon.com/CAP-Barbell-Frame-Olympic-Plate/dp/B00ZEYG9WK/ref=sr_1_7?keywords=weight+tree&qid=1700229365&sr=8-7")}
           {listItem("Stretching strap", "https://www.amazon.com/Gradient-Fitness-Stretching-Multi-loop-Neoprene/dp/B01A4CG3PE/ref=sr_1_54?qid=1700264325&s=exercise-and-fitness&sr=1-54&th=1")}
-          {listItem("Champion Hoody Size M", "https://www.champion.com/reverse-weave-hoodie.html")}
-          {listItem("Thermal Shirt Size L", "https://www.levi.com/US/en_US/clothing/men/shirts/long-sleeve-standard-fit-thermal-shirt/p/A16160001")}
+          {listItem("Champion Hoody Size M: ", "https://www.champion.com/reverse-weave-hoodie.html")}
+          {listItem("Thermal Shirt Size L: ", "https://www.levi.com/US/en_US/clothing/men/shirts/long-sleeve-standard-fit-thermal-shirt/p/A16160001")}
         </ul>
 
       </main>
