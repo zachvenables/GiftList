@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, getDocs, setDoc, documentId } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: FIREBASE_KEY,
+  apiKey: process.env.FIREBASE_KEY,
   authDomain: "gifttracker-94cad.firebaseapp.com",
   projectId: "gifttracker-94cad",
   storageBucket: "gifttracker-94cad.appspot.com",
