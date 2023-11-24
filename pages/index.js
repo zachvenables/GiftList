@@ -1,18 +1,69 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { useEffect, useState } from 'react';
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, doc, getDocs, setDoc, documentId } from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: FIREBASE_KEY,
+  authDomain: "gifttracker-94cad.firebaseapp.com",
+  projectId: "gifttracker-94cad",
+  storageBucket: "gifttracker-94cad.appspot.com",
+  messagingSenderId: "1056825648352",
+  appId: "1:1056825648352:web:393fcc23e9b81ae68fdc85"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+let querySnapshot = await getDocs(collection(db, "Gifts"));
 
 export default function Home() {
-
+  const [list, setList] = useState([]);
   const showEvent= () => {
     alert("It's December 25th")
+}
+
+
+  function generateList () {
+    let result = []
+    let index = 0;
+    querySnapshot.forEach((doc) => {
+      result.push(<li className={styles.listitem} key={index}>
+          {doc.data().name + ": "}
+          <a className={styles.anchor} href={doc.data().link}>Click Here</a>
+          {doc.data().wasPurchased ? bagCheck(doc) : bagDash(doc)}
+        </li>);
+        index ++;
+    });
+    return result;
   }
 
-  const listItem = (content, anchor) => {
-    return (
-      <li className={styles.listitem}>{content}<a className={styles.anchor} href={anchor}>Click Here</a></li>
+  useEffect(() => {
+    setList(generateList);
+  }, [querySnapshot]);
 
-    );
+  async function onclick (docz) {
+    await setDoc(doc(db, "Gifts", docz.id), {name: docz.data().name, link: docz.data().link, wasPurchased: !docz.data().wasPurchased})
+    querySnapshot = await getDocs(collection(db, "Gifts"));
+    setList(generateList);
   }
+  
+  const bagDash = (gift) => {
+    return (<div className={styles.bagIcon} onClick={e => onclick(gift)}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" className="bi bi-bag-dash" viewBox="0 0 16 16">
+        <path fillRule="evenodd" d="M5.5 10a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5"/>
+        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+      </svg>
+    </div>);
+  };
+  
+  const bagCheck = (gift) => {
+    return (<div className={styles.bagIcon} onClick={e => onclick(gift)}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" className="bi bi-bag-check-fill" viewBox="0 0 16 16">
+        <path fillRule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+      </svg>
+    </div>);
+  };
 
   return (
     <div className={styles.container}>
@@ -31,18 +82,24 @@ export default function Home() {
           Here is a list of things you can buy Zack for <s>his birthday</s> Christmas:
         </h2>
 
+        <h3>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" className="bi bi-bag-check-fill" viewBox="0 0 16 16">
+              <path fillRule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+            </svg> = Item has been purchased
+          </div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" className="bi bi-bag-dash" viewBox="0 0 16 16">
+              <path fillRule="evenodd" d="M5.5 10a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5"/>
+              <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+            </svg> = Item has not been purchased
+          </div>
+        </h3>
+
+        <h3>(Click the icon to toggle)</h3>
+
         <ul className={styles.list}>
-          {listItem("Adjustable Kettle Bell: ", "https://www.bowflex.com/selecttech/840-kettlebell/100790.html?irgwc=1&adID=DFBAFFIMPACT&clickid=QakzDfUz9xyPRnTyotQz3z4CUkFVE4w5WU3a1A0&utm_source=impact&utm_medium=affiliate&utm_campaign=NessWell&utm_term=3285732&utm_content=")}
-          {listItem("Raspberry Pi 5 8GB (Board Only): ", "https://www.canakit.com/raspberry-pi-5-8gb.html?cid=USD")}
-          {listItem("Raspberry Pi 5 Case: ", "https://www.canakit.com/official-raspberry-pi-5-case.html")}
-          {listItem("Raspberry Pi 5 Power Supply: ", "https://www.canakit.com/official-raspberry-pi-5-power-supply-27w-usb-c-white.html")}
-          {listItem("Micro SD Card: ", "https://www.amazon.com/gp/product/B09WB1857W/ref=ox_sc_act_title_3?smid=ATVPDKIKX0DER&psc=1")}
-          {listItem("Micro SD Card Reader: ", "https://www.amazon.com/Beikell-Connector-Adapter-Supports-Compatible-Windows/dp/B0BNJ9RGVP/ref=sr_1_3?crid=2V9TCVH9M6VYB&keywords=sd%2Bcard%2Breader&qid=1699754335&s=electronics&sprefix=sd%2Bcard%2Breader%2Celectronics%2C91&sr=1-3&th=1")}
-          {listItem("Slippers", "")}
-          {listItem("Weight Tree", "https://www.amazon.com/CAP-Barbell-Frame-Olympic-Plate/dp/B00ZEYG9WK/ref=sr_1_7?keywords=weight+tree&qid=1700229365&sr=8-7")}
-          {listItem("Stretching strap", "https://www.amazon.com/Gradient-Fitness-Stretching-Multi-loop-Neoprene/dp/B01A4CG3PE/ref=sr_1_54?qid=1700264325&s=exercise-and-fitness&sr=1-54&th=1")}
-          {listItem("Champion Hoody Size M: ", "https://www.champion.com/reverse-weave-hoodie.html")}
-          {listItem("Thermal Shirt Size L: ", "https://www.levi.com/US/en_US/clothing/men/shirts/long-sleeve-standard-fit-thermal-shirt/p/A16160001")}
+          {list}
         </ul>
 
       </main>

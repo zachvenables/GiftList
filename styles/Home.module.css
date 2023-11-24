@@ -153,10 +153,9 @@
     font-size: 1.5rem;
   }
 
-
-
   .list {
     font-size: 1.5rem;
+    width: 100%
   }
 
   .listitem {
@@ -167,4 +166,10 @@
 .anchor:visited {
   text-decoration: none;
   color: blue;
+}
+
+.bagIcon {
+  display: inline;
+  float: right;
+
 }
