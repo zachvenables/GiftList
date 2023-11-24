@@ -164,6 +164,7 @@
   }
 }
 
+
 .anchor:visited {
   text-decoration: none;
   color: blue;
@@ -172,5 +173,6 @@
 .bagIcon {
   display: inline;
   float: right;
+
 
 }

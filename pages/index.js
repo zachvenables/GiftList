@@ -30,7 +30,7 @@ export default function Home() {
     querySnapshot.forEach((doc) => {
       result.push(<li className={styles.listitem} key={index}>
           {doc.data().name + ": "}
-          <a className={styles.anchor} href={doc.data().link}>Click Here</a>
+          <a className={styles.anchor} href={doc.data().link}>Link</a>
           {doc.data().wasPurchased ? bagCheck(doc) : bagDash(doc)}
         </li>);
         index ++;
